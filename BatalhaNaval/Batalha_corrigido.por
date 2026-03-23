@@ -38,15 +38,19 @@ programa {
 
    					limpa()
 
-   					 se (mapa[linhaTiro][colunaTiro] == "N") {
-        					escreva("FOGO!! Você acertou o navio!\n\n")
+   					 se(mapa[linhaTiro][colunaTiro] == "*" ou mapa[linhaTiro][colunaTiro] == "A"){
+   					 	escreva("Você já atirou nesse local, gastou uma munição\n")
+   					 	
+   					 }senao se(mapa[linhaTiro][colunaTiro] == "N"){
+   					 	escreva("FOGO!! Você acertou o navio!\n\n")
         					mapa[linhaTiro][colunaTiro] = "*" // "X" de alvo atingido
         					pontos++
-    					} senao {
+   					 }senao {
         					escreva("ÁGUA... tente na próxima!\n\n")
         					mapa[linhaTiro][colunaTiro] = "A"
     					}
-
+   					 
+   					 
 					para(inteiro i = 0; i < 4; i++) {
       					para(inteiro j = 0; j < 4; j++) {
         			// Se ainda for o navio escondido "X", mostramos "~" para o jogador não ver
@@ -96,15 +100,3 @@ programa {
     
   }
 }
-
-/* $$$ Portugol Studio $$$ 
- * 
- * Esta seção do arquivo guarda informações do Portugol Studio.
- * Você pode apagá-la se estiver utilizando outro editor.
- * 
- * @POSICAO-CURSOR = 637; 
- * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = ;
- * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
- * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
- */
